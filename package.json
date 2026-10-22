@@ -1,0 +1,36 @@
+{
+  "name": "actiontrack",
+  "version": "1.0.0",
+  "description": "Track meeting-note action items and draft follow-up emails for review",
+  "main": "dist/cli.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "prepare": "tsc",
+    "bundle": "esbuild src/cli.ts --bundle --platform=node --target=node18 --format=cjs --external:google-auth-library --outfile=bundle/actiontrack.cjs"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "chrono-node": "2.7.7",
+    "commander": "12.1.0",
+    "google-auth-library": "9.15.0",
+    "yaml": "2.6.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.9.0",
+    "esbuild": "0.24.0",
+    "typescript": "5.6.3",
+    "vitest": "2.1.5"
+  },
+  "type": "module",
+  "bin": {
+    "actiontrack": "dist/cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "dist"
+  ]
+}
